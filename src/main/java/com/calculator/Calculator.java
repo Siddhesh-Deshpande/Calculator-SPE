@@ -11,6 +11,7 @@ public class Calculator
         System.out.println("Enter 2 for Caculating factorial");
         System.out.println("Enter 3 for Calculating Natural Logarithm");
         System.out.println("Enter 4 for Calculating Power Function");
+        System.out.println("Enter 5 to Exit");
         Scanner sc = new Scanner(System.in);
         while(true)
         {
@@ -52,8 +53,25 @@ public class Calculator
                 }
                 else
                 {
-                    System.out.println("Natural Logarithm of "+number+" is "+Math.log(number));
+                    System.out.println("Natural Logarithm of "+number+" is "+findNaturalLog(number));
                 }
+            }
+            else if(option==4)
+            {
+                System.out.println("Enter the Base");
+                double base = sc.nextDouble();
+                System.out.println("Enter the Exponent");
+                double exponent = sc.nextDouble();
+                System.out.println(base+" raised to the power "+exponent+" is "+calculatePower(base, exponent));
+            }
+            else if(option==5)
+            {
+                System.out.println("Exiting...Thank You!");
+                break;
+            }
+            else
+            {
+                System.out.println("Invalid Option, Enter Correct Option");
             }
 
         }
@@ -74,5 +92,9 @@ public class Calculator
     public static double findNaturalLog(double number)
     {
         return Math.log(number);
+    }
+    public static double calculatePower(double base, double exponent)
+    {
+        return Math.pow(base, exponent);
     }
 }

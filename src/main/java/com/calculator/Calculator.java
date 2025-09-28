@@ -95,6 +95,7 @@ public class Calculator
     }
     public static double calculatePower(double base, double exponent)
     {
+        
         return Math.pow(base, exponent);
     }
 }

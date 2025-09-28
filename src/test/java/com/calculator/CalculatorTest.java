@@ -19,6 +19,13 @@ public class CalculatorTest
         double expected = 120.0;
         Assert.assertEquals(expected, Calculator.findFactorial(n), 0.0001);
     }
+    @Test
+    public void testNaturalLog()
+    {
+        int n = 2;
+        double expected = 0.693147;
+        Assert.assertEquals(expected, Math.log(n), 0.0001);
+    }
     
 
     

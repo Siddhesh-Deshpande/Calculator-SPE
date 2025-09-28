@@ -42,6 +42,19 @@ public class Calculator
                     System.out.println("Factorial of "+number+" is "+findFactorial(number));
                 }
             }
+            else if(option==3)
+            {
+                System.out.println("Enter the Number");
+                double number = sc.nextDouble();
+                if(number<=0)
+                {
+                    System.out.println("Enter a positive number");
+                }
+                else
+                {
+                    System.out.println("Natural Logarithm of "+number+" is "+Math.log(number));
+                }
+            }
 
         }
     }
@@ -57,5 +70,9 @@ public class Calculator
             ans = ans*i;
         }
         return ans;
+    }
+    public static double findNaturalLog(double number)
+    {
+        return Math.log(number);
     }
 }

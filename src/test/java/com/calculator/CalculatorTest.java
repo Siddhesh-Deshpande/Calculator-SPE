@@ -12,6 +12,13 @@ public class CalculatorTest
         double expected = 4.0;
         Assert.assertEquals(expected, Calculator.findSquareRoot(n), 0.0001);
     }
+    @Test
+    public void testFactorial()
+    {
+        int n = 5;
+        double expected = 120.0;
+        Assert.assertEquals(expected, Calculator.findFactorial(n), 0.0001);
+    }
     
 
     

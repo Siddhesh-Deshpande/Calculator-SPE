@@ -29,15 +29,33 @@ public class Calculator
                     System.out.println("Square Root of "+number+" is "+findSquareRoot(number));
                 }
             }
-
-
-
-            
+            else if(option==2)
+            {
+                System.out.println("Enter the NUmber");
+                int number = sc.nextInt();
+                if(number<0)
+                {
+                    System.out.println("Enter a non-negative number");
+                }
+                else
+                {
+                    System.out.println("Factorial of "+number+" is "+findFactorial(number));
+                }
+            }
 
         }
     }
     public static double findSquareRoot(double number)
     {
         return Math.sqrt(number);
+    }
+    public static double findFactorial(int number)
+    {
+        int ans = 1;
+        for(int i=1;i<=number;i++)
+        {
+            ans = ans*i;
+        }
+        return ans;
     }
 }

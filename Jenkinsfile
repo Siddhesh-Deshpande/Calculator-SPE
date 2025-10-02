@@ -34,12 +34,12 @@ pipeline{
                 }
             }
         }
-        stage('Clean Docker Images') {
-            steps {
-                sh 'docker container prune -f'
-                sh 'docker image prune -f'
-            }
-        }
+        // stage('Clean Docker Images') {
+        //     steps {
+        //         sh 'docker container prune -f'
+        //         sh 'docker image prune -f'
+        //     }
+        // }
         // stage('Ansible Deployment'){
         //     steps{
         //         sh 'ansible-playbook -i inventory.ini deploy.yml'

@@ -34,20 +34,15 @@ pipeline{
                 }
             }
         }
-        // stage('Clean Docker Images') {
-        //     steps {
-        //         sh 'docker container prune -f'
-        //         sh 'docker image prune -f'
-        //     }
-        // }
-        // stage('Ansible Deployment'){
-        //     steps{
-        //         sh 'ansible-playbook -i inventory.ini deploy.yml'
-        //     }
-        // }
-        stage('Docker container creation'){
+        stage('Clean Docker Images') {
+            steps {
+                sh 'docker container prune -f'
+                sh 'docker image prune -f'
+            }
+        }
+        stage('Ansible Deployment'){
             steps{
-                sh 'docker create -it --name calculator siddhesh1712/calculator:latest'
+                sh 'ansible-playbook -i inventory.ini deploy.yml'
             }
         }
     }

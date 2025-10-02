@@ -40,5 +40,10 @@ pipeline{
                 sh 'docker image prune -f'
             }
         }
+        stage('Ansible Deployment'){
+            steps{
+                sh 'ansible-playbook -i inventory.ini deploy.yml'
+            }
+        }
     }
 }

@@ -1,0 +1,22 @@
+- name: Pull and run a CLI Docker image
+  hosts: local
+  gather_facts: false
+
+  tasks:
+    - name: Ensure Docker service is running
+      ansible.builtin.service:
+        name: docker
+        state: started
+
+    - name: Pull Docker image
+      community.docker.docker_image:
+        name: siddhesh1712/calculator:latest
+        source: pull
+    
+    - name: Remove existing container if present
+      community.docker.docker_container:
+        name: calculator
+        state: absent
+
+    - name: Run container interactively
+      ansible.builtin.command: docker create -it --name calculator siddhesh1712/calculator:latest

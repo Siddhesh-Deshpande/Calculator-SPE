@@ -18,5 +18,5 @@
         name: calculator
         state: absent
 
-    - name: Run container interactively
+    - name: create container interactively
       ansible.builtin.command: docker create -it --name calculator siddhesh1712/calculator:latest

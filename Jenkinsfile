@@ -46,4 +46,16 @@ pipeline{
             }
         }
     }
+    post {
+        success {
+            mail to: 'siddhesh17122004@gmail.com',
+                 subject: "Jenkins Pipeline Succeeded: ${currentBuild.fullDisplayName}",
+                 body: "Good news! The pipeline ${env.JOB_NAME} build #${env.BUILD_NUMBER} succeeded.\nCheck it here: ${env.BUILD_URL}"
+        }
+        failure {
+            mail to: 'siddhesh17122004@gmail.com',
+                 subject: "Jenkins Pipeline Failed: ${currentBuild.fullDisplayName}",
+                 body: "Attention! The pipeline ${env.JOB_NAME} build #${env.BUILD_NUMBER} failed.\nCheck details here: ${env.BUILD_URL}"
+        }
+    }
 }

@@ -1,4 +1,5 @@
-FROM eclipse-temurin:21-jre-alpine
+# FROM eclipse-temurin:21-jre-alpine
+FROM gcr.io/distroless/java21-debian12
 
 WORKDIR /app
 

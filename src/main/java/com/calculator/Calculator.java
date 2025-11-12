@@ -73,7 +73,7 @@ public class Calculator
             {
                 System.out.println("Invalid Option, Enter Correct Option");
             }
-            // Checking Before VIVA-2
+            // Checking Before VIVA-3
         }
     }
     public static double findSquareRoot(double number)
